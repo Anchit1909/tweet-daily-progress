@@ -69,6 +69,7 @@ bot.command("generate", async (ctx) => {
       $lte: endOfDay,
     },
   });
+
   if (events.length === 0) {
     await ctx.deleteMessage(waitingMessageId);
     await ctx.deleteMessage(loadingStickerMessageId);
@@ -83,13 +84,30 @@ bot.command("generate", async (ctx) => {
       messages: [
         {
           role: "system",
-          content:
-            "As a senior copywriter, your task is to craft highly engaging social media posts for a client. They have provided you with several events to promote, and your goal is to create captivating and creative posts for each one. Ensure that the posts are engaging and impactful. Here are the events shared by the client:",
+          content: `As a dedicated daily coder, your task is to document your progress on social media. You'll summarize your daily coding activities and personal achievements in a structured and engaging format. These are some examples:
+          Day 46 of CS:
+          - solved leetcode ps 1945, 3, 134 in 3 langs
+          - in next.js banking app | fixed some bugs, completed plaid integration 
+          - integrating dwolla accounts for secure bank transactions
+          - practiced japanese for 2 hours 
+          - applied for jobs to some Japanese companies
+          Day 45 of CS:
+          - got leetcode 50 days badge today 
+          - solved leetcode ps 274, 380, 238, 1894 in 4 langs
+          - in next.js banking app | integrating plaid to link bank accounts
+          - implemented server actions like bank account creation, modified signup process 
+          - practiced japanese for 1 hr
+          
+          Here are the events shared by the client:`,
         },
         {
           role: "user",
-          content: `Write like a human, for humans: Craft three engaging social media posts tailored for LinkedIn, Facebook, and Twitter audiences. Use the given time labels solely to understand the order of events; do not mention the time in the posts. Each post should creatively highlight the following events. Ensure the tone is conversational and impactful, focusing on engaging the respective platform's audience, encouraging them to take action, and sparking conversations. The client wants the posts to be engaging and creative, and has shared the following events with you:
-          ${events.map((event) => event.text).join(", ")},`,
+          content: `Write like a human, for humans: Generate a tweet summarizing my daily progress in a format that includes the day number, tasks accomplished, and any personal achievements or activities. Structure it as follows:
+        - Mention the day number (e.g., 'Day 46 of CS').
+        - Bullet point the tasks accomplished.
+        - Optionally add a brief, informal personal reflection at the end.
+        Use the given time labels solely to understand the order of events; do not mention the time in the posts. Here's the summary of today's activities:
+  ${events.map((event) => event.text).join(", ")}`,
         },
       ],
     });

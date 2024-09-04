@@ -45,7 +45,7 @@ bot.command("generate", async (ctx) => {
     return;
   }
   const waitingMessage = await ctx.reply(
-    `Hey! ${from.first_name}, I am generating the posts for you. Please wait... 🕒`
+    `Hey! ${from.first_name}, I am generating the tweet for you. Please wait... 🕒`
   );
 
   const waitingMessageId = waitingMessage.message_id;

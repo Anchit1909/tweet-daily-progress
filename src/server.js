@@ -29,7 +29,7 @@ bot.start(async (ctx) => {
       { upsert: true, new: true }
     );
     await ctx.reply(`
-      Hey! ${from.first_name}, Welcome. I will be writing highly engaging social media posts for you 🚀 Just keep feeding me with the events throughout the day. Let's shine on social media ✨`);
+      Hey! ${from.first_name}, Welcome. I will be writing daily progress tweets for you 🚀 Just keep feeding me with the events throughout the day. Let's shine on Twitter ✨`);
   } catch (error) {
     console.error("Error while saving user information", error);
     await ctx.reply("Something went wrong. Please try again later.");
@@ -84,7 +84,7 @@ bot.command("generate", async (ctx) => {
       messages: [
         {
           role: "system",
-          content: `As a dedicated daily coder, your task is to document your progress on social media. You'll summarize your daily coding activities and personal achievements in a structured and engaging format. These are some examples:
+          content: `As a dedicated daily coder, your task is to document your progress on twitter. You'll summarize your daily coding activities and personal achievements in a structured and engaging format. These are some examples:
           Day 46 of CS:
           - solved leetcode ps 1945, 3, 134 in 3 langs
           - in next.js banking app | fixed some bugs, completed plaid integration 
@@ -135,7 +135,7 @@ bot.command("generate", async (ctx) => {
 
 bot.help((ctx) =>
   ctx.reply(
-    "I am here to help you with generating social media posts. Just keep feeding me with the events throughout the day. To generate the posts, just enter the command: /generate \nFor support contact @anchit1909"
+    "I am here to help you with generating twitter posts. Just keep feeding me with the events throughout the day. To generate the posts, just enter the command: /generate \nFor support contact @anchit1909"
   )
 );
 

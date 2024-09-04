@@ -125,7 +125,7 @@ bot.command("generate", async (ctx) => {
     await ctx.deleteMessage(waitingMessageId);
     await ctx.deleteMessage(loadingStickerMessageId);
     await ctx.reply(
-      `Here are the posts for today:\n\n${chatCompletion.choices[0].message.content}`
+      `Here is the Twitter post for today:\n\n${chatCompletion.choices[0].message.content}`
     );
   } catch (error) {
     console.error("Error while generating posts", error);

@@ -135,7 +135,7 @@ bot.command("generate", async (ctx) => {
 
 bot.help((ctx) =>
   ctx.reply(
-    "I am here to help you with generating social media posts. Just keep feeding me with the events throughout the day. To generate the posts, just enter the command: /generate \nFor support contact @amitamrutiya2210"
+    "I am here to help you with generating social media posts. Just keep feeding me with the events throughout the day. To generate the posts, just enter the command: /generate \nFor support contact @anchit1909"
   )
 );
 

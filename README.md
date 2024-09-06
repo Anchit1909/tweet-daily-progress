@@ -36,7 +36,7 @@ DailyTweet is a Telegram bot that lets users track their daily learnings and the
 
 ## Demo
 
-<img src="./src/asset/demo-gif.gif" width=70%>
+<img src="./src/asset/demo-gif.gif" width=100%>
 
 ## Running Locally
 
